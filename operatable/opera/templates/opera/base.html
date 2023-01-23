@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Расписание</title>
+        <link type="text/css" href="{% static 'opera/css/style.css' %}" rel="stylesheet" />
+
+
+</head>
+<body class="body">
+    <header class="header" style = "background: #020201 no-repeat 0% 50%;">
+        <img src='{% static "images/logo-blur-2fb7cb.png" %}' alt="My image">
+<!--        <h1>Расписание</h1>-->
+        <div class = "title">Расписание</div>
+    </header>
+
+<div>
+<table>
+    <thead>
+        <tr>
+            <th>Дата</th>
+            <th>День </th>
+            <th colspan="2">Опера классы</th>
+            <th colspan="2">Балет классы</th>
+            <th>Сцена</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Утро</th>
+            <th>Вечер</th>
+            <th>Женский</th>
+            <th>Мужской</th>
+        </tr>
+    </thead>
+      {% for i in posts %}
+    <tr>
+        <td>{{i.date}}</td>
+        <td>{{i.day}}</td>
+        <td>{{i.night}}</td>
+        <td>{{i.morning}}</td>
+        <td>{{i.man}}</td>
+        <td>{{i.Woman}}</td>
+        <td>{{i.scene}}</td>
+    </tr>
+        {% endfor %}
+</table>
+
+</div>
+</body>
+</html>
