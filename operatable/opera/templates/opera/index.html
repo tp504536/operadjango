@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Расписание</title>
-        <link type="text/css" href="{% static 'opera/css/style.css' %}" rel="stylesheet" />
+        <link type="text/css" href="{% static 'opera/css/styles.css' %}" rel="stylesheet" />
 
 
 </head>
-<body class="body">
-    <header class="header" style = "background: #020201 no-repeat 0% 50%;">
+<body >
+<!--<body class="body">-->
+    <header>
+<!--    <header class="header" style = "background: #020201 no-repeat 0% 50%;">-->
         <img src='{% static "images/logo-blur-2fb7cb.png" %}' alt="My image">
 <!--        <h1>Расписание</h1>-->
         <div class = "title">Расписание</div>
@@ -17,43 +19,61 @@
 
 <div>
 <table>
-    <thead>
         <tr>
             <th>Дата</th>
             <th>День </th>
-            <th colspan="2">Опера классы</th>
-            <th colspan="2">Балет классы</th>
+            <th>Опера классы</th>
+            <th>Балет классы</th>
             <th>Сцена</th>
         </tr>
         <tr>
             <th></th>
             <th></th>
-            <th>Утро</th>
-            <th>Вечер</th>
-            <th>Женский</th>
-            <th>Мужской</th>
+
         </tr>
-    </thead>
+
+      {% for i in posts %}
+
     <tr>
-        {% for i in posts %}
-            {% for n in opera %}
-        {% with alpha=n%}
-        {% if i.id == n.table_id %}
         <td>{{i.date}}</td>
         <td>{{i.day}}</td>
-        <td>{{alpha}}</td>
-        <td>{{i.morning}}</td>
+        <td>
+            {%if i.id  == monday_id %}
+            {{monday_text}}
+            {%elif i.id == tuesday_id%}
+            {{tuesday_text}}
+            {%elif i.id == wednesday_id%}
+            {{wednesday_text}}
+            {%elif i.id == 4%}
+            {{thursday_text}}
+            {%elif i.id == 5%}
+            {{friday_text}}
+            {%elif i.id == 6%}
+            {{saturday_text}}
+            {%elif i.id == 7%}
+            {{sunday_text}}
+            {%endif%}
+        </td>
+        <td>
+             {%if i.id  == monday_id %}
+            {{monday_text_b}}
+            {%elif i.id == tuesday_id%}
+            {{tuesday_text_b}}
+            {%elif i.id == wednesday_id%}
+            {{wednesday_text_b}}
+            {%elif i.id == 4%}
+            {{thursday_text_b}}
+            {%elif i.id == 5%}
+            {{friday_text_b}}
+            {%elif i.id == 6%}
+            {{saturday_text_b}}
+            {%elif i.id == 7%}
+            {{sunday_text_b}}
+            {%endif%}
+        </td>
         <td>{{i.man}}</td>
-        <td>{{i.Woman}}</td>
-        <td>{{s.scene}}</td>
-        {% endif %}
-         {% endwith %}
+        {%endfor%}
     </tr>
-
-        {% endfor %}
-        {% endfor %}
-
-
 
 
 
@@ -62,3 +82,5 @@
 </div>
 </body>
 </html>
+
+

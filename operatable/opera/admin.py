@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+
 from .models import Tables, Scene, Table
 
 
@@ -19,8 +19,8 @@ class TableAdmin(admin.ModelAdmin):
     ]
 
 admin.site.register(Table, TableAdmin)
-admin.site.register(Tables)
-admin.site.register(Scene)
+# admin.site.register(Tables)
+# admin.site.register(Scene)
 
 # class OperaInline(admin.TabularInline):
 #     model = Opera
