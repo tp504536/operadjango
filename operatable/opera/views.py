@@ -10,8 +10,6 @@ def index(request):
     posts = Table.objects.all()
     opera = Tables.objects.all()
     scene = Scene.objects.all()
-    # monday_text = Tables.objects.filter(table_id='1')
-    # tuesday_text = Tables.objects.filter(table_id='2')
     monday_text = ""
     tuesday_text = ""
     wednesday_text = ""
@@ -23,18 +21,30 @@ def index(request):
     tuesday_text_b = ""
     wednesday_text_b = ""
     thursday_text_b = ""
-    friday_text_b= ""
+    friday_text_b = ""
     saturday_text_b = ""
-    sunday_text_b= ""
+    sunday_text_b = ""
     monday_id = ""
     tuesday_id = ""
     wednesday_id = ""
+    thursday_id = ""
+    friday_id = ""
+    saturday_id = ""
+    sunday_id = ""
     for test in Table.objects.filter(day="Понедельник").values("id"):
         monday_id = (f"{test['id']}")
     for test in Table.objects.filter(day="Вторник").values("id"):
         tuesday_id = (f"{test['id']}")
     for test in Table.objects.filter(day="Среда").values("id"):
         wednesday_id = (f"{test['id']}")
+    for test in Table.objects.filter(day="Четверг").values("id"):
+        thursday_id = (f"{test['id']}")
+    for test in Table.objects.filter(day="Пятница").values("id"):
+        friday_id  = (f"{test['id']}")
+    for test in Table.objects.filter(day="Суббота").values("id"):
+        saturday_id  = (f"{test['id']}")
+    for test in Table.objects.filter(day="Воскресение").values("id"):
+        sunday_id  = (f"{test['id']}")
 
     for a in Tables.objects.filter(table_id=monday_id):
         monday_text = monday_text + (f"{a.opera}") + "\n"
@@ -42,6 +52,14 @@ def index(request):
         tuesday_text = tuesday_text + (f"{b.opera}") + "\n"
     for c in Tables.objects.filter(table_id=wednesday_id):
         wednesday_text = wednesday_text + (f"{c.opera}") + "\n"
+    for d in Tables.objects.filter(table_id=thursday_id):
+        thursday_text = thursday_text + (f"{d.opera}") + "\n"
+    for e in Tables.objects.filter(table_id=friday_id):
+        friday_text = friday_text + (f"{e.opera}") + "\n"
+    for f in Tables.objects.filter(table_id=saturday_id):
+        saturday_text = saturday_text + (f"{f.opera}") + "\n"
+    for g in Tables.objects.filter(table_id= sunday_id):
+        sunday_text = sunday_text + (f"{g.opera}") + "\n"
 
     for a in Tables.objects.filter(table_id=monday_id):
         monday_text_b = monday_text_b + (f"{a.balet}") + "\n"
@@ -49,13 +67,25 @@ def index(request):
         tuesday_text_b = tuesday_text_b + (f"{b.balet}") + "\n"
     for c in Tables.objects.filter(table_id=wednesday_id):
         wednesday_text_b = wednesday_text_b + (f"{c.balet}") + "\n"
+    for d in Tables.objects.filter(table_id=thursday_id):
+        thursday_text_b = thursday_text_b + (f"{d.balet}") + "\n"
+    for e in Tables.objects.filter(table_id=friday_id):
+        friday_text_b = friday_text_b + (f"{e.balet}") + "\n"
+    for f in Tables.objects.filter(table_id=saturday_id):
+        saturday_text_b = saturday_text_b + (f"{f.balet}") + "\n"
+    for g in Tables.objects.filter(table_id=sunday_id):
+        sunday_text_b = sunday_text_b + (f"{g.balet}") + "\n"
 
     return render(request, 'opera/index.html',
                   {'posts': posts, 'opera': opera, 'scene': scene, 'monday_text': monday_text,
                    'tuesday_text': tuesday_text, 'monday_id': int(monday_id),
                    'tuesday_id': int(tuesday_id), 'wednesday_id': int(wednesday_id), 'wednesday_text': wednesday_text,
-                   'monday_text_b': monday_text_b, 'tuesday_text_b': tuesday_text_b, 'wednesday_text_b': wednesday_text_b
-                   })
+                   'monday_text_b': monday_text_b, 'tuesday_text_b': tuesday_text_b,
+                   'wednesday_text_b': wednesday_text_b,
+                   'thursday_id': int(thursday_id), 'thursday_text': thursday_text, 'friday_id': int(friday_id),
+                   'friday_text': friday_text,'thursday_text_b':thursday_text_b, 'friday_text_b': friday_text_b,
+                   'saturday_text_b':saturday_text_b,'sunday_text_b':sunday_text_b,'saturday_text':saturday_text,
+                   'sunday_text':sunday_text,'saturday_id':int(saturday_id),'sunday_id':int(sunday_id)})
 
 
 "Для 404 ошибки"

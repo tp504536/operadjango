@@ -12,7 +12,6 @@
 <!--<body class="body">-->
     <header>
 <!--    <header class="header" style = "background: #020201 no-repeat 0% 50%;">-->
-        <img src='{% static "images/logo-blur-2fb7cb.png" %}' alt="My image">
 <!--        <h1>Расписание</h1>-->
         <div class = "title">Расписание</div>
     </header>
@@ -44,13 +43,13 @@
             {{tuesday_text}}
             {%elif i.id == wednesday_id%}
             {{wednesday_text}}
-            {%elif i.id == 4%}
+            {%elif i.id == thursday_id%}
             {{thursday_text}}
-            {%elif i.id == 5%}
+            {%elif i.id == friday_id%}
             {{friday_text}}
-            {%elif i.id == 6%}
+            {%elif i.id == saturday_id%}
             {{saturday_text}}
-            {%elif i.id == 7%}
+            {%elif i.id == sunday_id%}
             {{sunday_text}}
             {%endif%}
         </td>
@@ -61,13 +60,13 @@
             {{tuesday_text_b}}
             {%elif i.id == wednesday_id%}
             {{wednesday_text_b}}
-            {%elif i.id == 4%}
+            {%elif i.id == thursday_id%}
             {{thursday_text_b}}
-            {%elif i.id == 5%}
+            {%elif i.id == friday_id%}
             {{friday_text_b}}
-            {%elif i.id == 6%}
+            {%elif i.id == saturday_id%}
             {{saturday_text_b}}
-            {%elif i.id == 7%}
+            {%elif i.id == sunday_id%}
             {{sunday_text_b}}
             {%endif%}
         </td>

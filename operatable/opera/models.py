@@ -19,8 +19,8 @@ class Table(models.Model):
         return self.day
 class Tables(models.Model):
     date = models.TimeField(null=False, verbose_name="Дата")
-    opera = models.CharField(null=False, max_length=100, verbose_name='Опера')
-    balet = models.CharField(null=False, max_length=100, verbose_name='Балет')
+    opera = models.CharField(null=False, max_length=300, verbose_name='Опера',blank =True)
+    balet = models.CharField(null=False, max_length=300, verbose_name='Балет',blank =True)
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
     class Meta:
         verbose_name_plural = "Опера-Балет"
