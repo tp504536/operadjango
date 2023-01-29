@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseNotFound
 from .models import *
 from django import forms
 from django.contrib.admin.widgets import AdminDateWidget, AdminTimeWidget, AdminSplitDateTime
-
+import re
 
 # Create your views here.
 def index(request):
@@ -31,19 +31,19 @@ def index(request):
     friday_id = ""
     saturday_id = ""
     sunday_id = ""
-    for test in Table.objects.filter(day="Понедельник").values("id"):
+    for test in Table.objects.filter(day="Пн").values("id"):
         monday_id = (f"{test['id']}")
-    for test in Table.objects.filter(day="Вторник").values("id"):
+    for test in Table.objects.filter(day="Вт").values("id"):
         tuesday_id = (f"{test['id']}")
-    for test in Table.objects.filter(day="Среда").values("id"):
+    for test in Table.objects.filter(day="Ср").values("id"):
         wednesday_id = (f"{test['id']}")
-    for test in Table.objects.filter(day="Четверг").values("id"):
+    for test in Table.objects.filter(day="Чт").values("id"):
         thursday_id = (f"{test['id']}")
-    for test in Table.objects.filter(day="Пятница").values("id"):
+    for test in Table.objects.filter(day="Пт").values("id"):
         friday_id  = (f"{test['id']}")
-    for test in Table.objects.filter(day="Суббота").values("id"):
+    for test in Table.objects.filter(day="Сб").values("id"):
         saturday_id  = (f"{test['id']}")
-    for test in Table.objects.filter(day="Воскресение").values("id"):
+    for test in Table.objects.filter(day="Вс").values("id"):
         sunday_id  = (f"{test['id']}")
 
     for a in Tables.objects.filter(table_id=monday_id):

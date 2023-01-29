@@ -2,13 +2,13 @@ from django.db import models
 
 
 class Table(models.Model):
-    day_to = (('Понедельник', 'Пн'),
-              ('Вторник', 'Вт'),
-              ('Среда', 'Ср'),
-              ('Четверг', 'Чт'),
-              ('Пятница', 'Пт'),
-              ('Суббота', 'Суб'),
-              ('Воскресение', 'Вос'))
+    day_to = (('Пн', 'Пн'),
+              ('Вт', 'Вт'),
+              ('Ср', 'Ср'),
+              ('Чт', 'Чт'),
+              ('Пт', 'Пт'),
+              ('Сб', 'Суб'),
+              ('Вс', 'Вос'))
     date = models.DateField(null=False, verbose_name="Дата")
     day = models.CharField(null=False, max_length=15, verbose_name="День", choices=day_to)
 

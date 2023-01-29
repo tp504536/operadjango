@@ -8,12 +8,10 @@
 
 
 </head>
-<body >
+<body class="test">
 <!--<body class="body">-->
     <header>
-<!--    <header class="header" style = "background: #020201 no-repeat 0% 50%;">-->
-<!--        <h1>Расписание</h1>-->
-        <div class = "title">Расписание</div>
+        <div class="ras">Расписание</div>
     </header>
 
 <div>
@@ -34,50 +32,53 @@
       {% for i in posts %}
 
     <tr>
-        <td>{{i.date}}</td>
-        <td>{{i.day}}</td>
+        <td><pre>{{i.date|date:"d F"}}</pre></td>
+        <td class="test">{{i.day}}</td>
         <td>
             {%if i.id  == monday_id %}
-            {{monday_text}}
+            <pre>{{monday_text}}</pre>
             {%elif i.id == tuesday_id%}
-            {{tuesday_text}}
+            <pre>{{tuesday_text}}</pre>
             {%elif i.id == wednesday_id%}
-            {{wednesday_text}}
+            <pre>{{wednesday_text}}</pre>
             {%elif i.id == thursday_id%}
-            {{thursday_text}}
+            <pre>{{thursday_text}}</pre>
             {%elif i.id == friday_id%}
-            {{friday_text}}
+            <pre>{{ friday_text }}</pre>
             {%elif i.id == saturday_id%}
-            {{saturday_text}}
+            <pre>{{saturday_text}}</pre>
             {%elif i.id == sunday_id%}
-            {{sunday_text}}
+            <pre>{{sunday_text}}</pre>
             {%endif%}
         </td>
         <td>
              {%if i.id  == monday_id %}
-            {{monday_text_b}}
+            <pre>{{monday_text_b}}</pre>
             {%elif i.id == tuesday_id%}
-            {{tuesday_text_b}}
+            <pre>{{tuesday_text_b}}</pre>
             {%elif i.id == wednesday_id%}
-            {{wednesday_text_b}}
+            <pre>{{wednesday_text_b}}</pre>
             {%elif i.id == thursday_id%}
-            {{thursday_text_b}}
+            <pre>{{thursday_text_b}}</pre>
             {%elif i.id == friday_id%}
-            {{friday_text_b}}
+            <pre>{{friday_text_b}}</pre>
             {%elif i.id == saturday_id%}
-            {{saturday_text_b}}
+            <pre>{{saturday_text_b}}</pre>
             {%elif i.id == sunday_id%}
-            {{sunday_text_b}}
+            <pre>{{sunday_text_b}}</pre>
             {%endif%}
         </td>
-        <td>{{i.man}}</td>
+        <td><pre>309 10:30-14:00 Дет.хор.
+РК 309 15:00-17:30 Миз.репетиция Лючия Столобова Выгородки, реквизиты.
+330 14:15-15:15 Хор, Богорад.
+309 17:30-20:30 Миз.спевка Турандот ЧУдовский,Михайлов Выгорордки,реквизты.
+329,330 18:00-21:00 Дет.хор.</pre></td>
         {%endfor%}
     </tr>
 
 
 
 </table>
-
 </div>
 </body>
 </html>
