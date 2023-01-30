@@ -52,9 +52,9 @@ class Tables(models.Model):
 
 
 class Scene(models.Model):
-    data_nascimento = models.TimeField(blank=True, null=True)
+    data_nascimento = models.DateField(blank=True, null=True)
     nome = models.CharField(max_length=100)
-    table = models.ForeignKey(Table, on_delete=models.CASCADE)
+    #table = models.ForeignKey(Table, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = "Сцена"

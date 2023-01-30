@@ -15,12 +15,12 @@ class SceneInline(admin.TabularInline):
 class TableAdmin(admin.ModelAdmin):
     inlines = [
         TablesInline,
-        SceneInline
+        #SceneInline
     ]
 
 admin.site.register(Table, TableAdmin)
 # admin.site.register(Tables)
-# admin.site.register(Scene)
+admin.site.register(Scene)
 
 # class OperaInline(admin.TabularInline):
 #     model = Opera

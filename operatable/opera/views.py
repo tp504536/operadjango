@@ -31,6 +31,9 @@ def index(request):
     friday_id = ""
     saturday_id = ""
     sunday_id = ""
+    hhh = ""
+    for h in Scene.objects.filter().values('data_nascimento'):
+        hhh = (f"{h['data_nascimento']}")
     for test in Table.objects.filter(day="Пн").values("id"):
         monday_id = (f"{test['id']}")
     for test in Table.objects.filter(day="Вт").values("id"):
@@ -85,7 +88,7 @@ def index(request):
                    'thursday_id': int(thursday_id), 'thursday_text': thursday_text, 'friday_id': int(friday_id),
                    'friday_text': friday_text,'thursday_text_b':thursday_text_b, 'friday_text_b': friday_text_b,
                    'saturday_text_b':saturday_text_b,'sunday_text_b':sunday_text_b,'saturday_text':saturday_text,
-                   'sunday_text':sunday_text,'saturday_id':int(saturday_id),'sunday_id':int(sunday_id)})
+                   'sunday_text':sunday_text,'saturday_id':int(saturday_id),'sunday_id':int(sunday_id),'hhh':hhh})
 
 
 "Для 404 ошибки"
