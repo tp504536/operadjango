@@ -4,9 +4,21 @@ from .models import *
 from django import forms
 from django.contrib.admin.widgets import AdminDateWidget, AdminTimeWidget, AdminSplitDateTime
 import re
+import datetime
+
 
 # Create your views here.
 def index(request):
+    weekday_dict = {0: "Пн", 1: "Вт", 2: "Ср", 3: "Чт", 4: "Пт", 5: "Сб", 6: "Вс"}
+    yesterday = datetime.datetime.now() - datetime.timedelta(1)
+    new_date = datetime.datetime.now() + datetime.timedelta(6)
+    weekday = weekday_dict[new_date.weekday()]
+    if Table.objects.filter(date=yesterday).count():
+        Table.objects.filter(date=yesterday).delete()
+        Table.objects.create(date=new_date, day=weekday)
+    if Scene.objects.filter(data_nascimento=yesterday).count():
+        Scene.objects.filter(data_nascimento=yesterday).delete()
+
     posts = Table.objects.all()
     opera = Tables.objects.all()
     scene = Scene.objects.all()

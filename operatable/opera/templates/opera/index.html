@@ -68,12 +68,14 @@
             <pre>{{sunday_text_b}}</pre>
             {%endif%}
         </td>
+        <td>
         {% for m in scene %}
-        {% if i.date == hhh %}
-        <td><pre>{{m}}</pre></td>
+        {% if i.date == m.data_nascimento %}
+        {{m}}
         {% endif %}
         {% endfor%}
         {%endfor%}
+        </td>
     </tr>
 
 

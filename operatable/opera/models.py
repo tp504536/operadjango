@@ -15,6 +15,7 @@ class Table(models.Model):
     class Meta:
         verbose_name_plural = "Расписание"
 
+
     def __str__(self):
         return self.day
 class Tables(models.Model):
@@ -24,6 +25,7 @@ class Tables(models.Model):
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
     class Meta:
         verbose_name_plural = "Опера-Балет"
+        ordering = ('-date',)
 
     def __str__(self):
         return self.opera
@@ -54,7 +56,8 @@ class Tables(models.Model):
 class Scene(models.Model):
     data_nascimento = models.DateField(blank=True, null=True)
     nome = models.CharField(max_length=100)
-    #table = models.ForeignKey(Table, on_delete=models.CASCADE)
+
+    #table = models.ForeignKey(Scene, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = "Сцена"

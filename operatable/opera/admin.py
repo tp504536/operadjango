@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from django import forms
 
 from .models import Tables, Scene, Table
 
@@ -17,10 +17,17 @@ class TableAdmin(admin.ModelAdmin):
         TablesInline,
         #SceneInline
     ]
+    list_display = ('date',)
+
+
+class SceneAdmin(admin.ModelAdmin):
+    list_display = ('data_nascimento',)
+
+
+
 
 admin.site.register(Table, TableAdmin)
-# admin.site.register(Tables)
-admin.site.register(Scene)
+admin.site.register(Scene,SceneAdmin)
 
 # class OperaInline(admin.TabularInline):
 #     model = Opera
