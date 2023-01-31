@@ -13,6 +13,7 @@ class Table(models.Model):
     day = models.CharField(null=False, max_length=15, verbose_name="День", choices=day_to)
 
     class Meta:
+        verbose_name = "Дату"
         verbose_name_plural = "Расписание"
 
 
@@ -57,10 +58,10 @@ class Scene(models.Model):
     data_nascimento = models.DateField(blank=True, null=True)
     nome = models.CharField(max_length=100)
 
-    #table = models.ForeignKey(Scene, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = "Сцена"
+        verbose_name = "Дату"
 
     def __str__(self):
         return self.nome
