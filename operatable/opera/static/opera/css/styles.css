@@ -1,7 +1,6 @@
 {% load static %}
-.test{
-    margin: 0;
-}
+
+
 
 .ras{
     text-align: center;
@@ -9,14 +8,14 @@
 }
 
 table {
-
+    top:15px;
     text-align: left;
     border-collapse: separate;
     border-spacing: 2px;
-    background: #ece9e0;
+
     color: #656665;
-    border: 8px solid #ece9e0;
-    border-radius: 20px;
+    border: 2px solid #050505;
+    border-radius: 8px;
     margin: auto;
     width: 800px;
     top: 900px;
@@ -36,8 +35,8 @@ h1 {
 }
 td {
     color: #000;
-    font-size: 15px;
-    background: #D8E3AB;
+    font-size: 20px;
+    background: #d7d9dbfd;
     height: 10px;
     padding: 0px 2px ;
     text-align: left;
@@ -45,4 +44,15 @@ td {
 .test{
     text-align: center;
     color:#000;
+}
+.opera {
+ background: rgba(17, 162, 207,0.3);
+  }
+
+.balet{
+    background:rgba(138, 113, 191,0.3);
+}
+
+.scena{
+    background:rgba(232, 210, 7,0.3);
 }

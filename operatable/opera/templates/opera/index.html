@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Расписание</title>
@@ -8,8 +8,8 @@
 
 
 </head>
-<body class="test">
-<!--<body class="body">-->
+<body >
+<body class="body">
     <header>
         <div class="ras">Расписание</div>
     </header>
@@ -34,7 +34,7 @@
     <tr>
         <td><pre>{{i.date|date:"d F"}}</pre></td>
         <td class="test">{{i.day}}</td>
-        <td>
+        <td class="opera">
             {%if i.id  == monday_id %}
             <pre>{{monday_text}}</pre>
             {%elif i.id == tuesday_id%}
@@ -51,7 +51,7 @@
             <pre>{{sunday_text}}</pre>
             {%endif%}
         </td>
-        <td>
+        <td class="balet">
              {%if i.id  == monday_id %}
             <pre>{{monday_text_b}}</pre>
             {%elif i.id == tuesday_id%}
@@ -68,7 +68,7 @@
             <pre>{{sunday_text_b}}</pre>
             {%endif%}
         </td>
-        <td>
+        <td class="scena">
         {% for m in scene %}
         {% if i.date == m.data_nascimento %}
         {{m}}

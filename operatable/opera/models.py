@@ -21,8 +21,8 @@ class Table(models.Model):
         return self.day
 class Tables(models.Model):
     date = models.TimeField(null=False, verbose_name="Дата")
-    opera = models.CharField(null=False, max_length=300, verbose_name='Опера',blank =True)
-    balet = models.CharField(null=False, max_length=300, verbose_name='Балет',blank =True)
+    opera = models.TextField(null=False, max_length=300, verbose_name='Опера',blank =True)
+    balet = models.TextField(null=False, max_length=300, verbose_name='Балет',blank =True)
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
     class Meta:
         verbose_name_plural = "Опера-Балет"
@@ -56,7 +56,7 @@ class Tables(models.Model):
 
 class Scene(models.Model):
     data_nascimento = models.DateField(blank=True, null=True)
-    nome = models.CharField(max_length=100)
+    nome = models.TextField(max_length=100)
 
 
     class Meta:
