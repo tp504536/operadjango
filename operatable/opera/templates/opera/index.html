@@ -4,21 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Расписание</title>
-        <link type="text/css" href="{% static 'opera/css/styles.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'opera/css/styles.css' %}" rel="stylesheet"/>
 
 
 </head>
-<body >
+<body>
 <body class="body">
-    <header>
-        <div class="ras">Расписание</div>
-    </header>
+<header>
+    <div class="ras">Расписание</div>
+</header>
 
-<div>
-<table>
+    <table>
         <tr>
             <th>Дата</th>
-            <th>День </th>
+            <th>День</th>
             <th>Опера классы</th>
             <th>Балет классы</th>
             <th>Сцена</th>
@@ -29,69 +28,82 @@
 
         </tr>
 
-      {% for i in posts %}
+        {% for i in posts %}
 
-    <tr>
-        <td><pre>{{i.date|date:"d F"}}</pre></td>
-        <td class="test">{{i.day}}</td>
-        <td class="opera">
-            {%if i.id  == monday_id %}
-            <pre>{{monday_text}}</pre>
-            {%elif i.id == tuesday_id%}
-            <pre>{{tuesday_text}}</pre>
-            {%elif i.id == wednesday_id%}
-            <pre>{{wednesday_text}}</pre>
-            {%elif i.id == thursday_id%}
-            <pre>{{thursday_text}}</pre>
-            {%elif i.id == friday_id%}
-            <pre>{{ friday_text }}</pre>
-            {%elif i.id == saturday_id%}
-            <pre>{{saturday_text}}</pre>
-            {%elif i.id == sunday_id%}
-            <pre>{{sunday_text}}</pre>
-            {%endif%}
-        </td>
-        <td class="balet">
-             {%if i.id  == monday_id %}
-            <pre>{{monday_text_b}}</pre>
-            {%elif i.id == tuesday_id%}
-            <pre>{{tuesday_text_b}}</pre>
-            {%elif i.id == wednesday_id%}
-            <pre>{{wednesday_text_b}}</pre>
-            {%elif i.id == thursday_id%}
-            <pre>{{thursday_text_b}}</pre>
-            {%elif i.id == friday_id%}
-            <pre>{{friday_text_b}}</pre>
-            {%elif i.id == saturday_id%}
-            <pre>{{saturday_text_b}}</pre>
-            {%elif i.id == sunday_id%}
-            <pre>{{sunday_text_b}}</pre>
-            {%endif%}
-        </td>
-        <td class="scena">
-             {%if i.id  == monday_id %}
-            <pre>{{monday_text_s}}</pre>
-            {%elif i.id == tuesday_id%}
-            <pre>{{tuesday_text_s}}</pre>
-            {%elif i.id == wednesday_id%}
-            <pre>{{wednesday_text_s}}</pre>
-            {%elif i.id == thursday_id%}
-            <pre>{{thursday_text_s}}</pre>
-            {%elif i.id == friday_id%}
-            <pre>{{friday_text_s}}</pre>
-            {%elif i.id == saturday_id%}
-            <pre>{{saturday_text_s}}</pre>
-            {%elif i.id == sunday_id%}
-            <pre>{{sunday_text_s}}</pre>
-            {%endif%}
-        </td>
-        {%endfor%}
+        <tr>
+            <td class="date">
+                <pre>{{i.date|date:"d F"}}</pre>
+            </td>
+            <td class="day">{{i.day}}</td>
+            <td class="opera">
 
-    </tr>
+                {%if i.id == monday_id %}
+                    {% for n in monday_text1 %}
+                        <br><br>{{n}}
+                    {%endfor%}
+
+                {%elif i.id == tuesday_id%}
+                    {% for n in tuesday_text1 %}
+                <br><br>{{n}}
+                        {% endfor%}
+
+                {%elif i.id == wednesday_id%}
+                    {% for n in wednesday_text1 %}
+                        <br><br>{{n}}
+                        {% endfor %}
+                <p>{{wednesday_text}}</p>
+                {%elif i.id == thursday_id%}
+                <p>{{thursday_text}}</p>
+                {%elif i.id == friday_id%}
+                <p>{{ friday_text }}</p>
+                {%elif i.id == saturday_id%}
+                <p>{{saturday_text}}</p>
+                {%elif i.id == sunday_id%}
+                <p>{{sunday_text}}</p>
+                {%endif%}
+
+            </td>
+            <td class="balet">
+                {%if i.id == monday_id %}
+                <p>{{monday_text_b}}</p>
+                {%elif i.id == tuesday_id%}
+                <p>{{tuesday_text_b}}</p>
+                {%elif i.id == wednesday_id%}
+                <p>{{wednesday_text_b}}</p>
+                {%elif i.id == thursday_id%}
+                <p>{{thursday_text_b}}</p>
+                {%elif i.id == friday_id%}
+                <p>{{friday_text_b}}</p>
+                {%elif i.id == saturday_id%}
+                <p>{{saturday_text_b}}</p>
+                {%elif i.id == sunday_id%}
+                <p>{{sunday_text_b}}</p>
+                {%endif%}
+            </td>
+            <td class="scena">
+                {%if i.id == monday_id %}
+                <p>{{monday_text_s}}</p>
+                    {%elif i.id == tuesday_id%}
+                <p>{{tuesday_text_s}}</p>
+                    {%elif i.id == wednesday_id%}
+                <p>{{wednesday_text_s}}</p>
+                    {%elif i.id == thursday_id%}
+                    <p>{{thursday_text_s}}</p>
+                    {%elif i.id == friday_id%}
+                    <p>{{friday_text_s}}</p>
+                    {%elif i.id == saturday_id%}
+                    <p>{{saturday_text_s}}</p>
+                    {%elif i.id == sunday_id%}
+                    <p>{{sunday_text_s}}</p>
+                    {%endif%}
+            </td>
+            {%endfor%}
 
 
+        </tr>
 
-</table>
+
+    </table>
 </div>
 </body>
 </html>

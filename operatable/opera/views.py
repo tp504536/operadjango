@@ -42,18 +42,21 @@ def index(request):
     friday_id = get_dayofweek_id("Пт")
     saturday_id = get_dayofweek_id("Сб")
     sunday_id = get_dayofweek_id("Вс")
+    monday_text1 = []
+    tuesday_text1 = []
+    wednesday_text1 = []
 
     for a in Tables.objects.filter(table_id=monday_id):
         monday_text_s = monday_text_s + (f"{a.scena}") + "\n"
-        monday_text = monday_text + (f"{a.opera}") + "\n"
+        monday_text1.append((f"{a.opera}"))
         monday_text_b = monday_text_b + (f"{a.balet}") + "\n"
     for b in Tables.objects.filter(table_id=tuesday_id):
         tuesday_text_s = tuesday_text_s + (f"{b.scena}") + "\n"
-        tuesday_text = tuesday_text + (f"{b.opera}") + "\n"
+        tuesday_text1.append((f"{b.opera}"))
         tuesday_text_b = tuesday_text_b + (f"{b.balet}") + "\n"
     for c in Tables.objects.filter(table_id=wednesday_id):
         wednesday_text_s = wednesday_text_s + (f"{c.scena}") + "\n"
-        wednesday_text = wednesday_text + (f"{c.opera}") + "\n"
+        wednesday_text1.append((f"{c.opera}"))
         wednesday_text_b = wednesday_text_b + (f"{c.balet}") + "\n"
     for d in Tables.objects.filter(table_id=thursday_id):
         thursday_text_s = thursday_text_s + (f"{d.scena}") + "\n"
@@ -84,7 +87,8 @@ def index(request):
                    'sunday_text': sunday_text, 'saturday_id': int(saturday_id), 'sunday_id': int(sunday_id),
                    'sunday_text_s': sunday_text_s, 'monday_text_s': monday_text_s, 'tuesday_text_s': tuesday_text_s,
                    'wednesday_text_s': wednesday_text_s, 'thursday_text_s': thursday_text_s,
-                   'friday_text_s': friday_text_s, 'saturday_text_s': saturday_text_s})
+                   'friday_text_s': friday_text_s, 'saturday_text_s': saturday_text_s, 'monday_text1': monday_text1,
+                   'tuesday_text1': tuesday_text1,'wednesday_text1':wednesday_text1})
 
 
 "Для 404 ошибки"
