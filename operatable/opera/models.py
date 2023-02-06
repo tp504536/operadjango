@@ -20,13 +20,14 @@ class Table(models.Model):
     def __str__(self):
         return self.day
 class Tables(models.Model):
-    date = models.TimeField(null=False, verbose_name="Дата")
-    opera = models.TextField(null=False, max_length=300, verbose_name='Опера',blank =True)
-    balet = models.TextField(null=False, max_length=300, verbose_name='Балет',blank =True)
+    #date = models.TimeField(null=False, verbose_name="Дата")
+    opera = models.CharField(null=False, max_length=300, verbose_name='Опера',blank =True)
+    balet = models.CharField(null=False, max_length=300, verbose_name='Балет',blank =True)
+    scena = models.CharField(null=False, max_length=300, verbose_name='Сцена',blank =True)
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
     class Meta:
-        verbose_name_plural = "Опера-Балет"
-        ordering = ('-date',)
+        verbose_name_plural = "Опера"
+
 
     def __str__(self):
         return self.opera
@@ -43,25 +44,25 @@ class Tables(models.Model):
 #
 #
 # class Bal(models.Model):
-#     nome = models.CharField(max_length=100)
-#     data_nascimento = models.DateTimeField(blank=True, null=True)
+#     nome = models.TextField(max_length=100)
 #     table = models.ForeignKey(Table, on_delete=models.CASCADE)
 #
 #     class Meta:
 #         verbose_name_plural = "Балет"
+#         verbose_name = "Расписание"
 #
 #     def __str__(self):
 #         return self.nome
-
-
-class Scene(models.Model):
-    data_nascimento = models.DateField(blank=True, null=True)
-    nome = models.TextField(max_length=100)
-
-
-    class Meta:
-        verbose_name_plural = "Сцена"
-        verbose_name = "Дату"
-
-    def __str__(self):
-        return self.nome
+#
+#
+# class Scene(models.Model):
+#     data_nascimento = models.DateField(blank=True, null=True)
+#     nome = models.TextField(max_length=100)
+#
+#
+#     class Meta:
+#         verbose_name_plural = "Сцена"
+#         verbose_name = "Дату"
+#
+#     def __str__(self):
+#         return self.nome

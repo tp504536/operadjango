@@ -69,13 +69,24 @@
             {%endif%}
         </td>
         <td class="scena">
-        {% for m in scene %}
-        {% if i.date == m.data_nascimento %}
-        {{m}}
-        {% endif %}
-        {% endfor%}
-        {%endfor%}
+             {%if i.id  == monday_id %}
+            <pre>{{monday_text_s}}</pre>
+            {%elif i.id == tuesday_id%}
+            <pre>{{tuesday_text_s}}</pre>
+            {%elif i.id == wednesday_id%}
+            <pre>{{wednesday_text_s}}</pre>
+            {%elif i.id == thursday_id%}
+            <pre>{{thursday_text_s}}</pre>
+            {%elif i.id == friday_id%}
+            <pre>{{friday_text_s}}</pre>
+            {%elif i.id == saturday_id%}
+            <pre>{{saturday_text_s}}</pre>
+            {%elif i.id == sunday_id%}
+            <pre>{{sunday_text_s}}</pre>
+            {%endif%}
         </td>
+        {%endfor%}
+
     </tr>
 
 

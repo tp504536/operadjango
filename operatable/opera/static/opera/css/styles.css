@@ -32,11 +32,13 @@ th {
 h1 {
     text-align: center;
     color: #FFFFFF;
+
+
 }
 td {
     color: #000;
     font-size: 20px;
-    background: #d7d9dbfd;
+    background: #f0d1a3;
     height: 10px;
     padding: 0px 2px ;
     text-align: left;
@@ -50,9 +52,10 @@ td {
   }
 
 .balet{
-    background:rgba(138, 113, 191,0.3);
+    background:rgba(171, 240, 245,0.3);
+    hyphenate-limit-chars: 6 3 2;
 }
 
 .scena{
-    background:rgba(232, 210, 7,0.3);
+    background:rgba(235, 245, 171,0.3);
 }
