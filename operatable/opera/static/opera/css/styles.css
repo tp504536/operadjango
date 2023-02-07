@@ -23,7 +23,7 @@ table {
 
 
 th {
-    font-size: 18px;
+    font-size: 20px;
     padding: 10px;
     text-align: center;
     color: #000;
@@ -36,7 +36,7 @@ h1 {
 }
 td {
     color: #000;
-    font-size: 20px;
+    font-size: 25px;
     background: rgba(17, 162, 207,0.3);
     height: 10px;
     padding: 0px 2px ;
@@ -55,19 +55,19 @@ td {
     color:#000;
 }
 .opera {
-  width: 25%;
+  width: 30%;
   background: rgba(17, 162, 207,0.3);
   }
 
 .balet{
-    width: 25%;
-    background:rgba(171, 240, 245,0.3);
+    width: 15%;
+    background: rgba(17, 162, 207,0.3);
 
 }
 
 .scena{
-    width: 25%;
-    background:rgba(235, 245, 171,0.3);
+    width: 30%;
+    background:rgba(17, 162, 207,0.3);;
 }
 
 .baseline {
@@ -79,7 +79,7 @@ p{
 
 }
 hr {
-	margin: 20px 0;
+	margin: 0px 0;
 	padding: 0;
 	height: 0;
 	border: none;

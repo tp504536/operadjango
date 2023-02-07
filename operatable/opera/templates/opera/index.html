@@ -44,58 +44,96 @@
 
                 {%elif i.id == tuesday_id%}
                     {% for n in tuesday_text1 %}
-                <br><br>{{n}}
+                <hr>{{n}}
                         {% endfor%}
 
                 {%elif i.id == wednesday_id%}
                     {% for n in wednesday_text1 %}
-                        <br><br>{{n}}
+                        <hr>{{n}}
                         {% endfor %}
-                <p>{{wednesday_text}}</p>
                 {%elif i.id == thursday_id%}
-                <p>{{thursday_text}}</p>
+                    {% for n in thursday_text1%}
+                        <hr>{{n}}
+                        {% endfor%}
+
                 {%elif i.id == friday_id%}
-                <p>{{ friday_text }}</p>
+                    {% for n in friday_text1 %}
+                        <hr>{{n}}
+                    {% endfor %}
                 {%elif i.id == saturday_id%}
-                <p>{{saturday_text}}</p>
+                    {% for n in saturday_text1 %}
+                    <hr>{{n}}
+                    {% endfor %}
                 {%elif i.id == sunday_id%}
-                <p>{{sunday_text}}</p>
+                    {% for n in sunday_text1 %}
+                    <hr>{{n}}
+                    {% endfor %}
                 {%endif%}
 
             </td>
             <td class="balet">
                 {%if i.id == monday_id %}
-                <p>{{monday_text_b}}</p>
+                {% for n in monday_text_b1 %}
+                <p>{{n}}</p>
+                {% endfor %}
+
                 {%elif i.id == tuesday_id%}
-                <p>{{tuesday_text_b}}</p>
+                {% for n in tuesday_text_b1 %}
+                    <p>{{n}}</p>
+                    {% endfor %}
                 {%elif i.id == wednesday_id%}
-                <p>{{wednesday_text_b}}</p>
+                {% for n in wednesday_text_b1 %}
+                    <p>{{n}}</p>
+                    {% endfor %}
                 {%elif i.id == thursday_id%}
-                <p>{{thursday_text_b}}</p>
+                    {% for n in thursday_text_b1 %}
+                    <p>{{n}}</p>
+                    {% endfor %}
                 {%elif i.id == friday_id%}
-                <p>{{friday_text_b}}</p>
+                {% for n in friday_text_b1 %}
+                    <p>{{n}}</p>
+                    {% endfor %}
                 {%elif i.id == saturday_id%}
-                <p>{{saturday_text_b}}</p>
+                {% for n in saturday_text_b1 %}
+                    <p>{{n}}</p>
+                    {% endfor %}
                 {%elif i.id == sunday_id%}
-                <p>{{sunday_text_b}}</p>
+                {% for n in  sunday_text_b1 %}
+                    <p>{{n}}</p>
+                    {% endfor %}
                 {%endif%}
             </td>
             <td class="scena">
                 {%if i.id == monday_id %}
-                <p>{{monday_text_s}}</p>
+                {% for n in monday_text_s1 %}
+                    <p>{{n}}</p>
+                    {% endfor %}
                     {%elif i.id == tuesday_id%}
-                <p>{{tuesday_text_s}}</p>
+                {% for n in tuesday_text_s1 %}
+                    <p>{{n}}</p>
+                    {% endfor %}
                     {%elif i.id == wednesday_id%}
-                <p>{{wednesday_text_s}}</p>
+                    {% for n in wednesday_text_s1 %}
+                        <p>{{n}}</p>
+                    {% endfor %}
                     {%elif i.id == thursday_id%}
-                    <p>{{thursday_text_s}}</p>
+                    {% for n in thursday_text_s1 %}
+                        <p>{{n}}</p>
+                        {% endfor %}
                     {%elif i.id == friday_id%}
-                    <p>{{friday_text_s}}</p>
+                    {% for n in friday_text_s1 %}
+                        <p>{{n}}</p>
+                        {% endfor %}
+
                     {%elif i.id == saturday_id%}
-                    <p>{{saturday_text_s}}</p>
+                    {% for n in saturday_text_s1 %}
+                    <p>{{n}}</p>
+                    {% endfor %}
                     {%elif i.id == sunday_id%}
-                    <p>{{sunday_text_s}}</p>
-                    {%endif%}
+                    {% for n in sunday_text_s1 %}
+                    <p>{{n}}</p>
+                    {% endfor %}
+                {%endif%}
             </td>
             {%endfor%}
 

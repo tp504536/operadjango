@@ -45,35 +45,52 @@ def index(request):
     monday_text1 = []
     tuesday_text1 = []
     wednesday_text1 = []
-
+    thursday_text1 = []
+    friday_text1 = []
+    saturday_text1 = []
+    sunday_text1 = []
+    monday_text_b1 = []
+    tuesday_text_b1 = []
+    wednesday_text_b1 = []
+    thursday_text_b1 = []
+    friday_text_b1 = []
+    saturday_text_b1 = []
+    sunday_text_b1 = []
+    monday_text_s1 = []
+    tuesday_text_s1 = []
+    wednesday_text_s1 = []
+    thursday_text_s1 = []
+    friday_text_s1 = []
+    saturday_text_s1 = []
+    sunday_text_s1 = []
     for a in Tables.objects.filter(table_id=monday_id):
-        monday_text_s = monday_text_s + (f"{a.scena}") + "\n"
+        monday_text_s1.append(f"{a.scena}")
         monday_text1.append((f"{a.opera}"))
-        monday_text_b = monday_text_b + (f"{a.balet}") + "\n"
+        monday_text_b1.append((f"{a.balet}"))
     for b in Tables.objects.filter(table_id=tuesday_id):
-        tuesday_text_s = tuesday_text_s + (f"{b.scena}") + "\n"
+        tuesday_text_s1.append(f"{b.scena}")
         tuesday_text1.append((f"{b.opera}"))
-        tuesday_text_b = tuesday_text_b + (f"{b.balet}") + "\n"
+        tuesday_text_b1.append(f"{b.balet}")
     for c in Tables.objects.filter(table_id=wednesday_id):
-        wednesday_text_s = wednesday_text_s + (f"{c.scena}") + "\n"
+        wednesday_text_s1.append(f"{c.scena}")
         wednesday_text1.append((f"{c.opera}"))
-        wednesday_text_b = wednesday_text_b + (f"{c.balet}") + "\n"
+        wednesday_text_b1.append(f"{c.balet}")
     for d in Tables.objects.filter(table_id=thursday_id):
-        thursday_text_s = thursday_text_s + (f"{d.scena}") + "\n"
-        thursday_text = thursday_text + (f"{d.opera}") + "\n"
-        thursday_text_b = thursday_text_b + (f"{d.balet}") + "\n"
+        thursday_text_s1.append(f"{d.scena}")
+        thursday_text1.append((f"{d.opera}"))
+        thursday_text_b1.append(f"{d.balet}")
     for e in Tables.objects.filter(table_id=friday_id):
-        friday_text_s = friday_text_s + (f"{e.scena}") + "\n"
-        friday_text = friday_text + (f"{e.opera}") + "\n"
-        friday_text_b = friday_text_b + (f"{e.balet}") + "\n"
+        friday_text_s1.append(f"{e.scena}")
+        friday_text1.append((f"{e.opera}"))
+        friday_text_b1.append(f"{e.balet}")
     for f in Tables.objects.filter(table_id=saturday_id):
-        saturday_text_s = saturday_text_s + (f"{f.scena}") + "\n"
-        saturday_text = saturday_text + (f"{f.opera}") + "\n"
-        saturday_text_b = saturday_text_b + (f"{f.balet}") + "\n"
+        saturday_text_s1.append(f"{f.scena}")
+        saturday_text1.append((f"{f.opera}"))
+        saturday_text_b1.append(f"{f.balet}")
     for g in Tables.objects.filter(table_id=sunday_id):
-        sunday_text_s = sunday_text_s + (f"{g.scena}") + "\n"
-        sunday_text = sunday_text + (f"{g.opera}") + "\n"
-        sunday_text_b = sunday_text_b + (f"{g.balet}") + "\n"
+        sunday_text_s1.append(f"{g.scena}")
+        sunday_text1.append((f"{g.opera}"))
+        sunday_text_b1.append(f"{g.balet}")
 
     return render(request, 'opera/index.html',
                   {'posts': posts, 'opera': opera, 'monday_text': monday_text,
@@ -88,7 +105,17 @@ def index(request):
                    'sunday_text_s': sunday_text_s, 'monday_text_s': monday_text_s, 'tuesday_text_s': tuesday_text_s,
                    'wednesday_text_s': wednesday_text_s, 'thursday_text_s': thursday_text_s,
                    'friday_text_s': friday_text_s, 'saturday_text_s': saturday_text_s, 'monday_text1': monday_text1,
-                   'tuesday_text1': tuesday_text1,'wednesday_text1':wednesday_text1})
+                   'tuesday_text1': tuesday_text1, 'wednesday_text1': wednesday_text1, 'thursday_text1': thursday_text1,
+                   'friday_text1': friday_text1, 'saturday_text1': saturday_text1, 'sunday_text1': sunday_text1,
+                   'monday_text_b1': monday_text_b1, 'tuesday_text_b1': tuesday_text_b1,
+                   'wednesday_text_b1': wednesday_text_b1, 'thursday_text_b1':thursday_text_b1,
+                   'friday_text_b1':friday_text_b1, 'saturday_text_b1':saturday_text_b1,'sunday_text_b1': sunday_text_b1,
+                   'monday_text_s1': monday_text_s1, 'tuesday_text_s1':tuesday_text_s1,
+                   'wednesday_text_s1':wednesday_text_s1,'thursday_text_s1': thursday_text_s1,
+                   'friday_text_s1': friday_text_s1 ,'saturday_text_s1': saturday_text_s1,'sunday_text_s1':sunday_text_s1})
+
+
+
 
 
 "Для 404 ошибки"

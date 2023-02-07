@@ -14,7 +14,7 @@ class Table(models.Model):
 
     class Meta:
         verbose_name = "Дату"
-        verbose_name_plural = "Расписание"
+        verbose_name_plural = "Общее расписание"
 
 
     def __str__(self):
