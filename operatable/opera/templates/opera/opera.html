@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" href="{% static 'opera/css/styles.css' %}" rel="stylesheet"/>
+    <title>Опера</title>
+<header>
+    <div class="ras">Опера</div>
+</header>
+
+    <table>
+        <caption>Уроки</caption>
+        <tr>
+            <th>Фамилиия</th>
+            <th>Уроки с дирижером</th>
+            <th colspan="3">Банцевич</th>
+            <th colspan="3"> Маркова</th>
+            <th colspan="3"> Решетникова</th>
+            <th colspan="3"> Иванова</th>
+            <th colspan="3">Смирнова</th>
+        </tr>
+          <tr>
+        <td></td>
+        <td></td>
+        <td>Помещение</td>
+        <td>Час</td>
+        <td>Название</td>
+        <td>Помещение</td>
+        <td>Час</td>
+        <td>Название</td>
+        <td>Помещение</td>
+        <td>Час</td>
+        <td>Название</td>
+        <td>Помещение</td>
+        <td>Час</td>
+        <td>Название</td>
+        <td>Помещение</td>
+        <td>Час</td>
+        <td>Название</td>
+      </tr>
+        <tr>
+
+            {% for i in post %}
+                <td>{{i.fam}}</td>
+                <td>{{i.dir}}</td>
+                <td>{{i.room}}</td>
+                <td>{{i.time}}</td>
+                <td>{{i.name_prof}}</td>
+        </tr>
+            {% endfor %}
+    </table>
+</body>
+</html>

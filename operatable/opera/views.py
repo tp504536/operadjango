@@ -120,6 +120,8 @@ def index(request):
 
 "Для 404 ошибки"
 
-
+def opera(request):
+    post = Opera.objects.all()
+    return render(request,'opera/opera.html',{'post':post})
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')
