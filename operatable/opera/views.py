@@ -18,6 +18,17 @@ def get_dayofweek_id(day):
     return dayofweek_id
 
 
+def get_opera(day):
+    for test in Operatable.objects.filter(day=day).values("id"):
+        get_day = (f"{test['id']}")
+    return get_day
+
+
+def get_name(date):
+    weekday_dict = {0: "Банцевич", 1: "Маркова", 2: "Решетникова", 3: "Иванова", 4: "Смирнова"}
+    return weekday_dict[date]
+
+
 # Create your views here.
 def index(request):
     stack = []
@@ -108,20 +119,37 @@ def index(request):
                    'tuesday_text1': tuesday_text1, 'wednesday_text1': wednesday_text1, 'thursday_text1': thursday_text1,
                    'friday_text1': friday_text1, 'saturday_text1': saturday_text1, 'sunday_text1': sunday_text1,
                    'monday_text_b1': monday_text_b1, 'tuesday_text_b1': tuesday_text_b1,
-                   'wednesday_text_b1': wednesday_text_b1, 'thursday_text_b1':thursday_text_b1,
-                   'friday_text_b1':friday_text_b1, 'saturday_text_b1':saturday_text_b1,'sunday_text_b1': sunday_text_b1,
-                   'monday_text_s1': monday_text_s1, 'tuesday_text_s1':tuesday_text_s1,
-                   'wednesday_text_s1':wednesday_text_s1,'thursday_text_s1': thursday_text_s1,
-                   'friday_text_s1': friday_text_s1 ,'saturday_text_s1': saturday_text_s1,'sunday_text_s1':sunday_text_s1})
-
-
-
+                   'wednesday_text_b1': wednesday_text_b1, 'thursday_text_b1': thursday_text_b1,
+                   'friday_text_b1': friday_text_b1, 'saturday_text_b1': saturday_text_b1,
+                   'sunday_text_b1': sunday_text_b1,
+                   'monday_text_s1': monday_text_s1, 'tuesday_text_s1': tuesday_text_s1,
+                   'wednesday_text_s1': wednesday_text_s1, 'thursday_text_s1': thursday_text_s1,
+                   'friday_text_s1': friday_text_s1, 'saturday_text_s1': saturday_text_s1,
+                   'sunday_text_s1': sunday_text_s1})
 
 
 "Для 404 ошибки"
 
+
 def opera(request):
+    monday = get_opera("Ср")
+    monday_fam = []
+    monday_dir = []
+    monday_room = []
+    monday_time = []
+    test = 'Решетникова'
+
     post = Opera.objects.all()
-    return render(request,'opera/opera.html',{'post':post})
+    for a in Opera.objects.filter(table_id=monday):
+        monday_fam.append(f"{a.fam}")
+        monday_dir.append(f"{a.dir}")
+        monday_room.append(f"{a.room}")
+        monday_time.append(f"{a.time}")
+
+    return render(request, 'opera/opera.html', {'post': post, 'monday': int(monday), 'monday_fam': monday_fam,
+                                                'monday_dir': monday_dir, 'monday_room': monday_room,
+                                                'monday_time': monday_time, 'test': test})
+
+
 def pageNotFound(request, exception):
     return HttpResponseNotFound('<h1>Страница не найдена</h1>')

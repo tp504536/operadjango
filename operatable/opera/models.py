@@ -41,8 +41,11 @@ class Operatable(models.Model):
               ('Пт', 'Пт'),
               ('Сб', 'Суб'),
               ('Вс', 'Вос'))
+    prof = (('Банцевич', 'Банцевич'), ('Марков', 'Марков'), ('Решетникова', 'Решетникова'),
+            ('Иванова', 'Иванова'), ('Смирнова', 'Смирнова'))
     date = models.DateField(null=False, verbose_name="Дата")
     day = models.CharField(null=False, max_length=15, verbose_name="День", choices=day_to)
+    pro = models.CharField(null=True, max_length=15, verbose_name="Фамилия", choices=prof)
 
     class Meta:
         verbose_name = "Дату"
@@ -81,3 +84,28 @@ class Opera(models.Model):
     def __str__(self):
         return self.fam
 
+class Rep(models.Model):
+    perf = (('Богема','Богема'),('Богема','Богема'),('Мадам Баттерфлай','Мадам Баттерфлай'),('Кармен','Кармен'),
+            ('Летучий Голландец','Летучий Голландец'),('Волшебная Флейта','Волшебная Флейта'),('Риголетто','Риголлето'),
+            ('Турандот','Турандот'),('Лючия','Лючия'),('Евгений Онегин','Евгений Онегин'),('Князь Игорь','Князь Игорь'),
+            ('Набукко','Набукко'),('Граф Ори','Граф Ори'),('Травиата','Травиата'),('Сатьяграха','Сатьяграха'),
+            ('Русалка','Русалка'),('Пиковая дама','Пиковая дама'),('Царская невеста','Царская невеста'),
+            ('Морозко','Морозко'))
+    conductor = (('Чудовский','Чудовский'),('Клиничев','Клиничев'),('Абашев','Абашев'),('Козлов','Козлов'),
+                 ('Богорад','Богорад'))
+    director = (('Столбова','Столбова'),('Рубина','Рубина'),('Кульга','Кульга'),('Михайлов','Михайлов'))
+    help_director = (('Леонтьев','Леонтьев'),('Акомпджанова','Акомпджанова'))
+    horm = (('test','test'),('test','test'))
+    time_of_day = (('Утро','Утро'),('Вечер','Вечер'))
+    time = models.TimeField(null=False,verbose_name='Время')
+    performance = models.CharField(null=False, max_length=20, verbose_name="Спектакль", choices=perf)
+    cond = models.CharField(null=False, max_length=20, verbose_name = 'Дирежер',choices=conductor)
+    direc = models.CharField(null=False, max_length=20, verbose_name = 'Режисер',choices=director)
+    help_dir = models.CharField(null=False,max_length=20, verbose_name = 'Пом.Режисер',choices=help_director)
+    hor = models.CharField(null=True, max_length=20, verbose_name = 'Хорм',choices=horm)
+
+    class Meta:
+        verbose_name_plural = "Тест"
+
+    def __str__(self):
+        return self.time_of_day

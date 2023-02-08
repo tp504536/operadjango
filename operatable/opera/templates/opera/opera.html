@@ -40,13 +40,35 @@
         <td>Название</td>
       </tr>
         <tr>
-
-            {% for i in post %}
-                <td>{{i.fam}}</td>
-                <td>{{i.dir}}</td>
-                <td>{{i.room}}</td>
-                <td>{{i.time}}</td>
-                <td>{{i.name_prof}}</td>
+             {% for i in post %}
+            <td>
+            {%if i.id == monday %}
+            {% for n in monday_fam %}
+                <p>{{n}}</p>
+                {%endfor%}
+            </td>
+            {% endif %}
+            <td>
+                {%if i.id == monday%}
+                {% for n in monday_dir %}
+                <p>{{n}}
+                {% endfor %}
+            </td>
+            {% endif %}
+            <td>
+                {%if i.id == monday and i.pro == test%}
+                {% for n in monday_room %}
+                <p>{{n}}
+                {% endfor %}
+            </td>
+                {% endif %}
+            <td>
+                {%if i.id == monday%}
+                {% for n in monday_time %}
+                <p>{{n}}
+                {% endfor %}
+            </td>
+                {% endif %}
         </tr>
             {% endfor %}
     </table>
