@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link type="text/css" href="{% static 'opera/css/styles.css' %}" rel="stylesheet"/>
     <title>Опера</title>
+</head>
 <header>
     <div class="ras">Опера</div>
 </header>
@@ -12,65 +13,58 @@
     <table>
         <caption>Уроки</caption>
         <tr>
-            <th>Фамилиия</th>
-            <th>Уроки с дирижером</th>
+            <th rowspan="12">Фамилиия</th>
+            <th rowspan="12">Уроки с дирижером</th>
             <th colspan="3">Банцевич</th>
             <th colspan="3"> Маркова</th>
             <th colspan="3"> Решетникова</th>
             <th colspan="3"> Иванова</th>
             <th colspan="3">Смирнова</th>
+            <th rowspan="12">Text</th>
+
         </tr>
-          <tr>
-        <td></td>
-        <td></td>
-        <td>Помещение</td>
-        <td>Час</td>
-        <td>Название</td>
-        <td>Помещение</td>
-        <td>Час</td>
-        <td>Название</td>
-        <td>Помещение</td>
-        <td>Час</td>
-        <td>Название</td>
-        <td>Помещение</td>
-        <td>Час</td>
-        <td>Название</td>
-        <td>Помещение</td>
-        <td>Час</td>
-        <td>Название</td>
-      </tr>
         <tr>
-             {% for i in post %}
-            <td>
-            {%if i.id == monday %}
-            {% for n in monday_fam %}
-                <p>{{n}}</p>
-                {%endfor%}
-            </td>
-            {% endif %}
-            <td>
-                {%if i.id == monday%}
-                {% for n in monday_dir %}
-                <p>{{n}}
-                {% endfor %}
-            </td>
-            {% endif %}
-            <td>
-                {%if i.id == monday and i.pro == test%}
-                {% for n in monday_room %}
-                <p>{{n}}
-                {% endfor %}
-            </td>
-                {% endif %}
-            <td>
-                {%if i.id == monday%}
-                {% for n in monday_time %}
-                <p>{{n}}
-                {% endfor %}
-            </td>
-                {% endif %}
+            <td>Час</td>
+            <td>Название</td>
+            <td>Пом-е</td>
+            <td>Час</td>
+            <td>Название</td>
+            <td>Пом-е</td>
+            <td>Час</td>
+            <td>Название</td>
+            <td>Пом-е</td>
+            <td>Час</td>
+            <td>Название</td>
+            <td>Пом-е</td>
+            <td>Час</td>
+            <td>Название</td>
+            <td>Пом-е</td>
+            <td>Пом-е</td>
+
         </tr>
-            {% endfor %}
+        <tr>
+           <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+            <td rowspan="10">Инфа</td>
+        </tr>
+           <tr>
+               <td>fdsfsd</td>
+           </tr>
+
+
+
     </table>
 </body>
 </html>

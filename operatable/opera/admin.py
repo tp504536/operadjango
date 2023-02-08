@@ -22,7 +22,7 @@ class OperaAdmin(admin.ModelAdmin):
     inlines = [
         OperaInline,
     ]
-
+    list_display = ('performance', 'day',)
 
 class TableAdmin(admin.ModelAdmin):
     inlines = [
@@ -30,10 +30,13 @@ class TableAdmin(admin.ModelAdmin):
     ]
     list_display = ('date', 'day',)
 
+class Test(admin.TabularInline):
+    model = Operatable
+
 
 admin.site.register(Table, TableAdmin)
 admin.site.register(Operatable, OperaAdmin)
-admin.site.register(Rep, RepAdmin)
+
 
 admin.site.site_header = "Театр Оперы и Балета"
 admin.site.site_title = "Панель администрирования"

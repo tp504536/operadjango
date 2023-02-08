@@ -132,23 +132,21 @@ def index(request):
 
 
 def opera(request):
-    monday = get_opera("Ср")
-    monday_fam = []
-    monday_dir = []
-    monday_room = []
-    monday_time = []
-    test = 'Решетникова'
+    users = ['Вутирас','Мокеева','Стародубова','Семенищева',
+    'Леус','Новикова','Карлова','Павлова',
+   'Наумова','Кумылганова','Перхурова','Шевченко',
+    'Рыженкова','Шляпникова','Бабинцева',
+    'Ковалевская','Позолотина','Никанорова',
+    'Бирюзова','Пастухова','Осовин','Межов',
+    'Манукян','Чеберяк', 'Крюков','Рахимов',
+    'Ворошнин','Петров','Леус','Бовыкин','Шлыков',
+    'Девин','Краснов','Гордеев','Миронов',
+    'Кульга','Стародубов','Семенищев','Касимов','Попов','Решетников','Коробейников','Бударацкий',
+    'Трошин','Морозов']
 
     post = Opera.objects.all()
-    for a in Opera.objects.filter(table_id=monday):
-        monday_fam.append(f"{a.fam}")
-        monday_dir.append(f"{a.dir}")
-        monday_room.append(f"{a.room}")
-        monday_time.append(f"{a.time}")
 
-    return render(request, 'opera/opera.html', {'post': post, 'monday': int(monday), 'monday_fam': monday_fam,
-                                                'monday_dir': monday_dir, 'monday_room': monday_room,
-                                                'monday_time': monday_time, 'test': test})
+    return render(request, 'opera/opera.html', {'post': post,'users': users})
 
 
 def pageNotFound(request, exception):
