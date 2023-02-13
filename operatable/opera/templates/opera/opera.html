@@ -8,7 +8,7 @@
 </head>
 <header>
 </header>
-
+<body>
     <table>
         <caption></caption>
         <tr>
@@ -56,26 +56,19 @@
             <td>Назв</td>
             <td rowspan="2">&quot;Назв спек&quot;</td>
             <td rowspan="2">&quot;Назв спек&quot;</td>
+
         </tr>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
-            <td rowspan="6">Инфа</td>
+            {% for i, j ,y in mylist  %}
+            <td rowspan="6">{{i}}</td>
+            <td rowspan="6">{{j}}</td>
+            <td rowspan="6">{{y}}</td>
+            {% endfor %}
             <td>Помещ</td>
             <td>Помещ</td>
             <td>Помещ</td>
             <td>Помещ</td>
+
+
         </tr>
           <tr>
             <td>Час</td>
@@ -118,9 +111,32 @@
             <td>П. режис</td>
           </tr>
          {% for i in users %}
+
         <tr>
-            <td>{{i}}</td>
-            {% endfor %}
+            <td>{{forloop.counter}} {{i}}</td>
+            <td>
+                {{test_dict[i]}}
+            </td>
+            <td>{{forloop.counter}}</td>
+            <td>
+
+            </td>
+            <td>Наз</td>
+            <td>{{forloop.counter}}</td>
+            <td>Время</td>
+            <td>Наз</td>
+            <td>{{forloop.counter}}</td>
+            <td>Время</td>
+            <td>Наз</td>
+            <td>{{forloop.counter}}</td>
+            <td>Время</td>
+            <td>Наз</td>
+            <td>{{forloop.counter}}</td>
+            <td>Время</td>
+            <td>Наз</td>
+            <td></td>
+          {% endfor %}
+
         </tr>
 
 

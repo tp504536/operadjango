@@ -143,10 +143,45 @@ def opera(request):
     'Девин','Краснов','Гордеев','Миронов',
     'Кульга','Стародубов','Семенищев','Касимов','Попов','Решетников','Коробейников','Бударацкий',
     'Трошин','Морозов']
+    test = ['1','2','3']
+    # post = Opera.objects.all()
+    opera_lesson = OperaLesson.objects.all()
+    lesson_bancevich = OperaLesson.objects.filter(teacher="Банцевич").values()
+    lesson_markova = OperaLesson.objects.filter(teacher="Марков").values()
+    lesson_reshetnikova = OperaLesson.objects.filter(teacher="Решетникова").values()
+    lesson_ivanova = OperaLesson.objects.filter(teacher="Иванова").values()
+    lesson_smirnova = OperaLesson.objects.filter(teacher="Смирнова").values()
+    classes = []
+    times = []
+    title = []
+    iterator = [0, 1, 2, 3, 4]
+    test_dict = {}
+    for i in OperaLesson.objects.filtervalues("faml"):
+        test_dict[i] = OperaLesson.objects.filter(faml=i).values('conductor')
+    for i in TableLesson.objects.filter(table_id=1):
+        classes.append(f"{i.room1}")
+        classes.append(f"{i.room2}")
+        classes.append(f"{i.room3}")
+        classes.append(f"{i.room4}")
+        classes.append(f"{i.room5}")
+        times.append(f"{i.time1}")
+        times.append(f"{i.time2}")
+        times.append(f"{i.time3}")
+        times.append(f"{i.time4}")
+        times.append(f"{i.time5}")
+        title.append(f"{i.title1}")
+        title.append(f"{i.title2}")
+        title.append(f"{i.title3}")
+        title.append(f"{i.title4}")
+        title.append(f"{i.title5}")
+    mylist = zip(classes, times,title)
 
-    post = Opera.objects.all()
 
-    return render(request, 'opera/opera.html', {'post': post,'users': users})
+    return render(request, 'opera/opera.html', {'users': users,'opera_lesson':opera_lesson,'test': test,'mylist':mylist,'title':title,
+                                                'lesson_bancevich': lesson_bancevich, 'lesson_markova': lesson_markova,
+                                                'lesson_reshetnikova': lesson_reshetnikova,
+                                                'lesson_ivanova': lesson_ivanova,
+                                                'lesson_smirnova': lesson_smirnova,'test_dict':test_dict})
 
 
 def pageNotFound(request, exception):
